@@ -16,8 +16,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: test
         run: |
-             echo "machine urs.earthdata.nasa.gov login earthaccess password EDL_test1" > ~/.netrc
-             rm -f github-login.ipynb # exclude login from testing
              pytest --nbval-lax *.ipynb
 #      - name: render
 #        run: myst build climate.md --pdf
