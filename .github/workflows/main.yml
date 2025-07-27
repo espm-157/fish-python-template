@@ -4,7 +4,7 @@ name: Reproducibility Check
 jobs:
   render:
     name: execute notebook
-    runs-on: arc-runner-espm288 # ubuntu-latest
+    runs-on: arc-runner-espm157 # ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
