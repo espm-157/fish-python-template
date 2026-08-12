@@ -4,8 +4,8 @@ name: Reproducibility Check
 jobs:
   render:
     name: execute notebook
-    runs-on: arc-runner-espm157 # ubuntu-latest
-    container: rocker/ml
+    runs-on: ${{ (github.repository_owner == 'espm-157' && github.event.repository.private) && 'arc-runner-espm157' || 'ubuntu-latest' }}
+    container: ${{ (github.repository_owner == 'espm-157' && github.event.repository.private) && 'rocker/ml' || '' }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
