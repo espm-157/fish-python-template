@@ -5,6 +5,7 @@ jobs:
   render:
     name: execute notebook
     runs-on: arc-runner-espm157 # ubuntu-latest
+    container: rocker/ml
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
