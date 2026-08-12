@@ -5,7 +5,7 @@ jobs:
   render:
     name: execute notebook
     runs-on: ${{ (github.repository_owner == 'espm-157' && github.event.repository.private) && 'arc-runner-espm157' || 'ubuntu-latest' }}
-    container: rocker/ml
+    container: ${{ (github.repository_owner == 'espm-157' && github.event.repository.private) && 'rocker/ml' || '' }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
