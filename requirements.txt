@@ -1,5 +1,5 @@
 pandas
 plotnine
-duckdb==1.3.2
+duckdb
 ibis-framework[duckdb]
 nbval
